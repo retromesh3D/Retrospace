@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retrospace — About</title>
+
+<!-- RETRO FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<!-- BODY TEXT FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#3152d7;
+  --blue-dark:#2442b5;
+  --bg:#ececec;
+  --white:#fff;
+  --text:#111;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+}
+
+html{
+  visibility:hidden;
+}
+
+html.ready{
+  visibility:visible;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#000;
+  font-family:"Press Start 2P", monospace;
+}
+
+.site{
+  width:min(100vw,960px);
+  height:960px;
+  max-height:90vh;
+  display:flex;
+  flex-direction:column;
+  background:var(--bg);
+  overflow:hidden;
+}
+
+
+/* HEADER */
+
+.topbar{
+  min-height:60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 18px 0 20px;
+  background:var(--blue);
+  color:var(--white);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+}
+
+.brand a{
+  color:var(--white);
+  text-decoration:none;
+  font-size:12px;
+  padding:20px 10px;
+}
+
+.brand a:hover{
+  background:#e6e6e6;
+  color:var(--blue);
+}
+
+/* NAV */
+.nav{
+  display:flex;
+  gap:12px;
+  padding-left:10px;
+  flex-wrap:wrap;
+}
+.nav a{
+  color:var(--white);
+  text-decoration:none;
+  font-size:12px;
+  padding:20px;
+}
+
+.nav a:hover{
+  background:#e6e6e6;
+  color:var(--blue);
+}
+
+.nav a.active{
+  background:#e6e6e6;
+  color:var(--blue);
+  cursor:default;
+}
+
+/* CONTENT */
+
+main{
+  flex:1;
+  padding:32px;
+  text-align:left;
+  overflow-y:auto;
+  scrollbar-width:auto;
+  scrollbar-color:var(--blue) var(--bg);
+}
+
+main::-webkit-scrollbar{
+  width:14px;
+}
+
+main::-webkit-scrollbar-track{
+  background:var(--bg);
+}
+
+main::-webkit-scrollbar-thumb{
+  background:var(--blue);
+  border:3px solid var(--bg);
+}
+
+main::-webkit-scrollbar-thumb:hover{
+  background:var(--blue-dark);
+}
+
+/* ABOUT */
+
+.about{
+  color:var(--text);
+}
+
+.about h1,
+.about h2{
+  font-family:"Press Start 2P", monospace;
+  font-size:13px;
+  line-height:1.6;
+  margin-top:10px;
+  margin-bottom:0;
+  color:var(--blue);
+}
+
+.about p{
+  font-family:"Inter", sans-serif;
+  font-size:14px;
+  line-height:1.5;
+  font-weight:500;
+  text-align:justify;
+  margin-bottom:20px;
+}
+
+/* RULE */
+
+.rule{
+  height:2px;
+  background:#3152d7;
+  margin:12px 0 18px;
+}
+
+/* FLOAT VIDEO */
+
+.bio-image{
+  float:right;
+  width:300px;
+  max-width:42%;
+  margin:0 0 0 16px;
+  background:#fff;
+}
+
+.bio-image video{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* SKILLS */
+
+.skills{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  margin-top:10px;
+}
+
+.skills p{
+  text-align:left;
+  margin-bottom:0;
+}
+
+.clear{
+  clear:both;
+}
+
+/* FOOTER */
+
+.footer{
+  min-height:60px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  padding:0 20px;
+  background:var(--blue);
+  color:var(--white);
+}
+
+.footer-center a{
+  display:flex;
+  align-items:center;
+    font-size:12px;
+    color:var(--white);
+  text-decoration:none;
+}
+
+.footer-center a:hover{
+  opacity:.6;
+}
+
+.icons{
+  justify-self:end;
+  display:flex;
+  gap:16px;
+}
+
+.icons img{
+  width:28px;
+  height:28px;
+  filter:brightness(0) invert(1);
+}
+
+.icons a:hover img{
+  opacity:.6;
+}
+
+.icons img{
+  width:28px;
+  height:28px;
+  filter:brightness(0) invert(1);
+}
+
+.icons a:hover img{
+  opacity:.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px){
+  .nav{
+    gap:10px;
+    padding-left:10px;
+  }
+
+  .nav a{
+    padding:20px 10px;
+    font-size:10px;
+  }
+
+  .hero-title{
+    font-size:20px;
+    line-height:1.4;
+  }
+
+  .hero-copy{
+    font-size:13px;
+    line-height:1.6;
+    margin-top:20px;
+  }
+
+  .frame{
+    margin-top:24px;
+  }
+}
+
+@media (max-width:600px){
+
+.topbar{
+  padding:0 10px 0 12px;
+}
+
+/* FIXED RULE */
+
+.brand a{
+  font-size:8px;
+}
+
+
+  .nav{
+    gap:4px;
+    padding-left:6px;
+  }
+
+  .nav a{
+    font-size:6px;
+    padding:20px 4px;
+  }
+
+  main{
+    padding:24px 16px;
+  }
+
+  .hero-title{
+    font-size:15px;
+    line-height:1.5;
+  }
+
+  .hero-copy{
+    font-size:12px;
+    line-height:1.6;
+    margin-top:16px;
+  }
+
+  .frame{
+    width:100%;
+    margin-top:20px;
+    aspect-ratio:4/3;
+  }
+
+.footer{
+  min-height:60px;
+  grid-template-columns:1fr auto 1fr;
+  padding:0 12px;
+  
+}
+
+.footer-center a{
+  text-align:center;
+  font-size:6px;
+}
+
+  .icons{
+    gap:6px;
+  }
+
+  .icons img{
+    width:16px;
+    height:16px;
+  }
+  
+  .about h1,
+.about h2{
+  font-family:"Press Start 2P", monospace;
+  font-size:10px;
+  line-height:1.6;
+  margin-top:10px;
+  margin-bottom:0;
+  color:var(--blue);
+}
+
+.about p{
+  font-family:"Inter", sans-serif;
+  font-size:8px;
+  line-height:1.5;
+  font-weight:500;
+  text-align:justify;
+  margin-bottom:20px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="site">
+
+<header class="topbar">
+
+<div class="brand">
+<a href="../index.html">RETROMESH</a>
+</div>
+
+<nav class="nav">
+    <a href="about.html">ABOUT</a>
+    <a href="portfolio.html">PORTFOLIO</a>
+     <a href="resume.html">RESUME</a>
+</nav>
+
+</header>
+
+<main>
+
+<div class="about">
+
+<h1>BIOGRAPHY</h1>
+<div class="rule"></div>
+
+<div class="bio-image">
+<video autoplay loop muted playsinline>
+<source src="../videos/monitor.mp4" type="video/mp4">
+</video>
+</div>
+
+<p> Carlos-Enrique Salazar Aguilar is a Montreal-based 3D artist, a graduate of Dawson College’s 3D Animation and Computer Generated Imagery program, and currently pursuing a Bachelor of Fine Arts in Computation Arts at Concordia University. His practice focuses on 3D modeling, animation, and the creation of video game-inspired concepts. His work explores themes of digital memory, nostalgia, and artificial presence, drawing from early 2000s gaming culture and aesthetics. <p> Working primarily with tools such as Blender, Photoshop, Substance Painter, and Adobe Premiere, Carlos develops low-poly characters, assets, and environments that reinterpret the visual language of retro gaming. His practice blends technical workflows with personal influences, creating spaces that reflect emotional memory. Alongside his academic work, he maintains an active independent practice, sharing his projects and creative process through YouTube and other platforms.<p> As his work evolves, Carlos is expanding into real-time and interactive media by integrating his characters into game engines. His practice explores how nostalgic digital aesthetics can be transformed into contemporary experiences that engage with perception, memory, and virtual space. His work has reached a wide online audience, with select projects garnering hundreds of thousands of views. Through a series of concepts and original character works, he has built a growing following of over 21,000 subscribers on YouTube, engaging viewers across multiple platforms. <div class="clear"></div>
+
+<div class="clear"></div>
+
+<h1>ARTIST STATEMENT</h1>
+<div class="rule"></div>
+
+<p> I create characters, assets, and environments that explore nostalgia through 3D modeling and animations. Influenced by 2000s-era digital culture and video game aesthetics, my work reconstructs spaces and objects that feel familiar yet remain synthetic.</p>
+
+<p>Rather than pursuing realism, I focus on the emotional quality of remembered experiences, recreating how they felt rather than how they existed. I do not aim to recreate the past, but to reinterpret it through modern-day tools. Drawing from Nintendo DS and PSP-era visuals, my work blends low-poly forms with saturated color palettes to create a stylized, dreamlike atmosphere. I grew up with this era of gaming and found comfort in it during difficult times, and it now lingers in my memory like a dream. </p>
+
+<p>As my practice evolves, I aim to continue developing immersive environments while expanding into real-time applications. By sharing my process and creations more consistently, I seek to further explore how nostalgic digital aesthetics can be transformed into new, contemporary experiences within interactive and evolving digital spaces.</p>
+<div class="clear"></div>
+
+<div class="clear"></div>
+
+</div>
+</main>
+
+<footer class="footer">
+
+<div></div>
+
+<div class="footer-center">
+<a href="mailto:ca.en.salazar@gmail.com">ca.en.salazar@gmail.com</a>
+</div>
+
+<div class="icons">
+
+<a href="https://www.youtube.com/@retromesh" target="_blank">
+<img src="../svgs/YouTube.svg">
+</a>
+
+<a href="https://x.com/retromesh3D" target="_blank">
+<img src="../svgs/X.svg">
+</a>
+
+<a href="https://www.instagram.com/retromesh/" target="_blank">
+<img src="../svgs/Instagram.svg">
+</a>
+
+</div>
+
+</footer>
+
+</div>
+
+<script>
+window.addEventListener("load",function(){
+document.documentElement.classList.add("ready");
+});
+</script>
+
+</body>
+</html>
