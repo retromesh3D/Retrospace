@@ -166,7 +166,8 @@ main::-webkit-scrollbar-thumb:hover{
 
 .frame video{
   width:100%;
-  height:auto;
+  height:100%;
+  object-fit:cover;   /* 🔥 THIS IS THE KEY */
   display:block;
   opacity:0;
   transition:opacity 0.2s ease;
@@ -239,10 +240,15 @@ main::-webkit-scrollbar-thumb:hover{
 }
 
 .frame{
+  width:100%;
+
   margin-top:24px;
+  aspect-ratio:1/1; 
+  
 }
 
 }
+
 
 @media (max-width:600px){
 
@@ -284,7 +290,7 @@ main{
 .frame{
   width:100%;
   margin-top:20px;
-  aspect-ratio:4/3;
+  aspect-ratio:4/5;
 }
 
 .footer{
@@ -356,7 +362,7 @@ window.addEventListener("load", () => {
 <h1 class="hero-title">WELCOME TO THE RETROSPACE</h1>
 
 <p class="hero-copy">
-A COLLECTION OF 3D WORKS BY CARLOS-ENRIQUE.
+A COLLECTION OF 3D WORKS BY CARLOS-ENRIQUE
 </p>
 
 <div class="frame">
